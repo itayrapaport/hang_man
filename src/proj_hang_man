@@ -1,0 +1,93 @@
+package game;
+import java.util.*;
+public class game {
+	public static int[] hungMan(int []arr, String s, int[]arr_new)
+	{
+
+
+int index= arr[0];
+int place= 0;
+for(int i= 0;i<s.length(); i++) {
+	if(s.charAt(i)==index) {
+		arr_new[i]= (char)index;
+	}
+	
+}
+return arr_new;
+
+
+	}
+	public static Scanner reader  = new Scanner (System.in);
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	  String c_1= "cat";
+	  String c_2= "dog";
+	  String c_3= "orangutan";
+	  String c_4= "bee";
+	  String c_5= "bird";
+
+
+	  
+	  
+	  
+	  
+
+
+	  String Chosen_word= null;
+	  int num= (int)(Math.random()*(5-1+1)+1);
+	 if (num==1) {
+			  Chosen_word=  c_1;
+	 
+	  }
+	 if (num==2) {
+		  Chosen_word= c_2;
+ 
+  }
+	 if (num==3) {
+		  Chosen_word= c_3;
+ 
+  }
+	 if (num==4) {
+		  Chosen_word= c_4;
+
+ }
+	 if (num==5) {
+		  Chosen_word= c_5;
+
+ }
+	 int count= 0;
+	 int []arr1= new int[Chosen_word.length()];
+	 for(int i= 0; i<arr1.length; i++) {
+		 arr1[i]= '-';
+	 }
+	 boolean flag=false;
+	 while(flag==false) {
+	 System.out.println("enter a char");
+	 char c= reader.next().charAt(0);
+	 int[]arr= new int[1];
+	 for(int i= 0;i<1; i++) {
+		 arr[i]= c;
+	 }
+	 
+
+	 int[]arr_new= hungMan(arr,Chosen_word, arr1);
+	
+	 for(int i= 0; i<arr_new.length; i++)
+	 {
+		 System.out.print((char)arr_new[i]);
+	 }
+	 System.out.println(" ");
+	 count= 0;
+	 for(int i= 0;i<arr_new.length; i++) {
+		 if(arr_new[i]=='-') {
+			 count++;
+		 }
+	 }
+	 if(count==0) {
+		 flag=true;
+	 }
+	 }
+	
+	}
+
+}
